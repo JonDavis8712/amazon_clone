@@ -11,9 +11,7 @@ const stripe = require("stripe")(
 const app = express();
 
 // - Middlewares
-app.use(cors({origin: true}));
-app.use(express.json());
-
+app.use(cors({origin: true})); app.use(express.json());
 // - API routes
 app.get("/", (request, response) => response.status(200).send("hello world"));
 
@@ -37,5 +35,5 @@ app.post("/payments/create", async (request, response) => {
 exports.api = functions.https.onRequest(app);
 
 // Example endpoint
-// http://localhost:5001/challenge-4b2b2/us-central1/api
+// http://127.0.0.1:4000
 
